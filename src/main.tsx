@@ -5,6 +5,7 @@ import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } 
 import { CSS } from '@dnd-kit/utilities';
 import { SdxChannel, SdxFile, duplicateGroups, parseSdx, scoreCandidate, serializeSdx } from './sdx';
 import './styles.css';
+// Asset revision: forces a fresh content-hashed browser bundle after a failed deploy.
 
 type BuildMode = 'replace' | 'prepend';
 const download = (data: Uint8Array, filename: string) => { const safeCopy = data.slice(); const url = URL.createObjectURL(new Blob([safeCopy.buffer], { type: 'application/octet-stream' })); const a = document.createElement('a'); a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url); };
