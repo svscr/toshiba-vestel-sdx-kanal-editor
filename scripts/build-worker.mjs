@@ -9,7 +9,7 @@ async function collect(directory) {
     if (entry.name === 'server') continue;
     const path = new URL(`${entry.name}${entry.isDirectory() ? '/' : ''}`, directory);
     if (entry.isDirectory()) await collect(path);
-    else files[`/${relative(root.pathname, path.pathname).replaceAll('\\\\', '/')}`] = (await readFile(path)).toString('base64');
+    else files[`/${relative(root.pathname, path.pathname).replaceAll('\\', '/')}`] = (await readFile(path)).toString('base64');
   }
 }
 await collect(root);
